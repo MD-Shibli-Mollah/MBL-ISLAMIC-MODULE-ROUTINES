@@ -1,0 +1,19 @@
+* I_F.BD.THANA.NAME Created 09 OCT 19 at 03:37PM by MORTOZA/MORTOZA01
+*      PREFIX[BD.THANA]
+                   EQU BD.THANA.THANA.NAME TO 1,   BdThanaName_ThanaName TO 1,
+                      BD.THANA.RESERVED.05 TO 2,   BdThanaName_Reserved05 TO 2,
+                      BD.THANA.RESERVED.04 TO 3,   BdThanaName_Reserved04 TO 3,
+                      BD.THANA.RESERVED.03 TO 4,   BdThanaName_Reserved03 TO 4,
+                      BD.THANA.RESERVED.02 TO 5,   BdThanaName_Reserved02 TO 5,
+                      BD.THANA.RESERVED.01 TO 6,   BdThanaName_Reserved01 TO 6,
+                        BD.THANA.LOCAL.REF TO 7,   BdThanaName_LocalRef TO 7,
+                         BD.THANA.OVERRIDE TO 8,   BdThanaName_Override TO 8,
+                    BD.THANA.RECORD.STATUS TO 9,   BdThanaName_RecordStatus TO 9,
+                          BD.THANA.CURR.NO TO 10,  BdThanaName_CurrNo TO 10,
+                         BD.THANA.INPUTTER TO 11,  BdThanaName_Inputter TO 11,
+                        BD.THANA.DATE.TIME TO 12,  BdThanaName_DateTime TO 12,
+                       BD.THANA.AUTHORISER TO 13,  BdThanaName_Authoriser TO 13,
+                          BD.THANA.CO.CODE TO 14,  BdThanaName_CoCode TO 14,
+                        BD.THANA.DEPT.CODE TO 15,  BdThanaName_DeptCode TO 15,
+                     BD.THANA.AUDITOR.CODE TO 16,  BdThanaName_AuditorCode TO 16,
+                  BD.THANA.AUDIT.DATE.TIME TO 17,  BdThanaName_AuditDateTime TO 17

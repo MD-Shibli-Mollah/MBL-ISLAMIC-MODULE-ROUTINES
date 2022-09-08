@@ -1,0 +1,23 @@
+* I_F.MBL.TXN.LIMIT.PRODUCTWISE Created 31 MAR 20 at 05:42PM by r19dev/MORTOZA01
+*      PREFIX[TXN.LMTCATWISE]
+                   EQU TXN.LMTCATWISE.DR.TXN.LMT TO 1,   MblTxnLimitProductwise_DrTxnLmt TO 1,
+                       TXN.LMTCATWISE.CR.TXN.LMT TO 2,   MblTxnLimitProductwise_CrTxnLmt TO 2,
+                TXN.LMTCATWISE.ONLINE.DR.TXN.LMT TO 3,   MblTxnLimitProductwise_OnlineDrTxnLmt TO 3,
+                TXN.LMTCATWISE.ONLINE.CR.TXN.LMT TO 4,   MblTxnLimitProductwise_OnlineCrTxnLmt TO 4,
+                          TXN.LMTCATWISE.REMARKS TO 5,   MblTxnLimitProductwise_Remarks TO 5,
+                      TXN.LMTCATWISE.RESERVED.05 TO 6,   MblTxnLimitProductwise_Reserved05 TO 6,
+                      TXN.LMTCATWISE.RESERVED.04 TO 7,   MblTxnLimitProductwise_Reserved04 TO 7,
+                      TXN.LMTCATWISE.RESERVED.03 TO 8,   MblTxnLimitProductwise_Reserved03 TO 8,
+                      TXN.LMTCATWISE.RESERVED.02 TO 9,   MblTxnLimitProductwise_Reserved02 TO 9,
+                      TXN.LMTCATWISE.RESERVED.01 TO 10,  MblTxnLimitProductwise_Reserved01 TO 10,
+                        TXN.LMTCATWISE.LOCAL.REF TO 11,  MblTxnLimitProductwise_LocalRef TO 11,
+                         TXN.LMTCATWISE.OVERRIDE TO 12,  MblTxnLimitProductwise_Override TO 12,
+                    TXN.LMTCATWISE.RECORD.STATUS TO 13,  MblTxnLimitProductwise_RecordStatus TO 13,
+                          TXN.LMTCATWISE.CURR.NO TO 14,  MblTxnLimitProductwise_CurrNo TO 14,
+                         TXN.LMTCATWISE.INPUTTER TO 15,  MblTxnLimitProductwise_Inputter TO 15,
+                        TXN.LMTCATWISE.DATE.TIME TO 16,  MblTxnLimitProductwise_DateTime TO 16,
+                       TXN.LMTCATWISE.AUTHORISER TO 17,  MblTxnLimitProductwise_Authoriser TO 17,
+                          TXN.LMTCATWISE.CO.CODE TO 18,  MblTxnLimitProductwise_CoCode TO 18,
+                        TXN.LMTCATWISE.DEPT.CODE TO 19,  MblTxnLimitProductwise_DeptCode TO 19,
+                     TXN.LMTCATWISE.AUDITOR.CODE TO 20,  MblTxnLimitProductwise_AuditorCode TO 20,
+                  TXN.LMTCATWISE.AUDIT.DATE.TIME TO 21,  MblTxnLimitProductwise_AuditDateTime TO 21

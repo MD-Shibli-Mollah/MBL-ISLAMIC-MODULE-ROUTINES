@@ -1,0 +1,16 @@
+* I_F.MBL.ONLINE.TXN.INFO Created 07 APR 20 at 01:07PM by r19dev/MORTOZA01
+*      PREFIX[ONLINE.TXN]
+                  EQU ONLINE.TXN.AC.CATEGORY TO 1,   MblOnlineTxnInfo_AcCategory TO 1,
+                           ONLINE.TXN.REF.NO TO 2,   MblOnlineTxnInfo_RefNo TO 2,
+                             ONLINE.TXN.DATE TO 3,   MblOnlineTxnInfo_Date TO 3,
+                         ONLINE.TXN.DR.OR.CR TO 4,   MblOnlineTxnInfo_DrOrCr TO 4,
+                           ONLINE.TXN.AMOUNT TO 5,   MblOnlineTxnInfo_Amount TO 5,
+                       ONLINE.TXN.OP.CO.CODE TO 6,   MblOnlineTxnInfo_OpCoCode TO 6,
+                       ONLINE.TXN.AC.CO.CODE TO 7,   MblOnlineTxnInfo_AcCoCode TO 7,
+                      ONLINE.TXN.RESERVED.05 TO 8,   MblOnlineTxnInfo_Reserved05 TO 8,
+                      ONLINE.TXN.RESERVED.04 TO 9,   MblOnlineTxnInfo_Reserved04 TO 9,
+                      ONLINE.TXN.RESERVED.03 TO 10,  MblOnlineTxnInfo_Reserved03 TO 10,
+                      ONLINE.TXN.RESERVED.02 TO 11,  MblOnlineTxnInfo_Reserved02 TO 11,
+                      ONLINE.TXN.RESERVED.01 TO 12,  MblOnlineTxnInfo_Reserved01 TO 12,
+                        ONLINE.TXN.LOCAL.REF TO 13,  MblOnlineTxnInfo_LocalRef TO 13,
+                         ONLINE.TXN.OVERRIDE TO 14,  MblOnlineTxnInfo_Override TO 14

@@ -1,0 +1,19 @@
+* I_F.BD.DIVISION.NAME Created 09 OCT 19 at 03:14PM by MORTOZA/MORTOZA01
+*      PREFIX[BD.DIVISION]
+                EQU BD.DIVISION.DIVISION.NAME TO 1,   BdDivisionName_DivisionName TO 1,
+                      BD.DIVISION.RESERVED.05 TO 2,   BdDivisionName_Reserved05 TO 2,
+                      BD.DIVISION.RESERVED.04 TO 3,   BdDivisionName_Reserved04 TO 3,
+                      BD.DIVISION.RESERVED.03 TO 4,   BdDivisionName_Reserved03 TO 4,
+                      BD.DIVISION.RESERVED.02 TO 5,   BdDivisionName_Reserved02 TO 5,
+                      BD.DIVISION.RESERVED.01 TO 6,   BdDivisionName_Reserved01 TO 6,
+                        BD.DIVISION.LOCAL.REF TO 7,   BdDivisionName_LocalRef TO 7,
+                         BD.DIVISION.OVERRIDE TO 8,   BdDivisionName_Override TO 8,
+                    BD.DIVISION.RECORD.STATUS TO 9,   BdDivisionName_RecordStatus TO 9,
+                          BD.DIVISION.CURR.NO TO 10,  BdDivisionName_CurrNo TO 10,
+                         BD.DIVISION.INPUTTER TO 11,  BdDivisionName_Inputter TO 11,
+                        BD.DIVISION.DATE.TIME TO 12,  BdDivisionName_DateTime TO 12,
+                       BD.DIVISION.AUTHORISER TO 13,  BdDivisionName_Authoriser TO 13,
+                          BD.DIVISION.CO.CODE TO 14,  BdDivisionName_CoCode TO 14,
+                        BD.DIVISION.DEPT.CODE TO 15,  BdDivisionName_DeptCode TO 15,
+                     BD.DIVISION.AUDITOR.CODE TO 16,  BdDivisionName_AuditorCode TO 16,
+                  BD.DIVISION.AUDIT.DATE.TIME TO 17,  BdDivisionName_AuditDateTime TO 17

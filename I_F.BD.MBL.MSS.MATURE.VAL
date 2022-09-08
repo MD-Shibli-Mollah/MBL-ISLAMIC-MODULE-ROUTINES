@@ -1,0 +1,20 @@
+* I_F.BD.MBL.MSS.MATURE.VAL Created 10 APR 20 at 10:54PM by mbll3dev/EBRAHIM.FDS01
+*      PREFIX[MBL]
+                    EQU MBL.PROD.NAME TO 1,   BdMblMssMatureVal_ProdName TO 1,
+                    MBL.PROD.DURATION TO 2,   BdMblMssMatureVal_ProdDuration TO 2,
+                      MBL.INSTAL.SIZE TO 3,   BdMblMssMatureVal_InstalSize TO 3,
+                     MBL.MATURE.VALUE TO 4,   BdMblMssMatureVal_MatureValue TO 4,
+                       MBL.RESERVED.5 TO 5,   BdMblMssMatureVal_Reserved5 TO 5,
+                       MBL.RESERVED.4 TO 6,   BdMblMssMatureVal_Reserved4 TO 6,
+                       MBL.RESERVED.3 TO 7,   BdMblMssMatureVal_Reserved3 TO 7,
+                       MBL.RESERVED.2 TO 8,   BdMblMssMatureVal_Reserved2 TO 8,
+                       MBL.RESERVED.1 TO 9,   BdMblMssMatureVal_Reserved1 TO 9,
+                    MBL.RECORD.STATUS TO 10,  BdMblMssMatureVal_RecordStatus TO 10,
+                          MBL.CURR.NO TO 11,  BdMblMssMatureVal_CurrNo TO 11,
+                         MBL.INPUTTER TO 12,  BdMblMssMatureVal_Inputter TO 12,
+                        MBL.DATE.TIME TO 13,  BdMblMssMatureVal_DateTime TO 13,
+                       MBL.AUTHORISER TO 14,  BdMblMssMatureVal_Authoriser TO 14,
+                          MBL.CO.CODE TO 15,  BdMblMssMatureVal_CoCode TO 15,
+                        MBL.DEPT.CODE TO 16,  BdMblMssMatureVal_DeptCode TO 16,
+                     MBL.AUDITOR.CODE TO 17,  BdMblMssMatureVal_AuditorCode TO 17,
+                  MBL.AUDIT.DATE.TIME TO 18,  BdMblMssMatureVal_AuditDateTime TO 18

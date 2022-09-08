@@ -1,0 +1,19 @@
+* I_F.BD.BB.SECTOR Created 10 OCT 19 at 11:20AM by MORTOZA/MORTOZA01
+*      PREFIX[BB.SECTOR]
+                  EQU BB.SECTOR.DESCRIPTION TO 1,   BdBbSector_Description TO 1,
+                      BB.SECTOR.RESERVED.05 TO 2,   BdBbSector_Reserved05 TO 2,
+                      BB.SECTOR.RESERVED.04 TO 3,   BdBbSector_Reserved04 TO 3,
+                      BB.SECTOR.RESERVED.03 TO 4,   BdBbSector_Reserved03 TO 4,
+                      BB.SECTOR.RESERVED.02 TO 5,   BdBbSector_Reserved02 TO 5,
+                      BB.SECTOR.RESERVED.01 TO 6,   BdBbSector_Reserved01 TO 6,
+                        BB.SECTOR.LOCAL.REF TO 7,   BdBbSector_LocalRef TO 7,
+                         BB.SECTOR.OVERRIDE TO 8,   BdBbSector_Override TO 8,
+                    BB.SECTOR.RECORD.STATUS TO 9,   BdBbSector_RecordStatus TO 9,
+                          BB.SECTOR.CURR.NO TO 10,  BdBbSector_CurrNo TO 10,
+                         BB.SECTOR.INPUTTER TO 11,  BdBbSector_Inputter TO 11,
+                        BB.SECTOR.DATE.TIME TO 12,  BdBbSector_DateTime TO 12,
+                       BB.SECTOR.AUTHORISER TO 13,  BdBbSector_Authoriser TO 13,
+                          BB.SECTOR.CO.CODE TO 14,  BdBbSector_CoCode TO 14,
+                        BB.SECTOR.DEPT.CODE TO 15,  BdBbSector_DeptCode TO 15,
+                     BB.SECTOR.AUDITOR.CODE TO 16,  BdBbSector_AuditorCode TO 16,
+                  BB.SECTOR.AUDIT.DATE.TIME TO 17,  BdBbSector_AuditDateTime TO 17

@@ -1,0 +1,249 @@
+* @ValidationCode : MjotNzQwNjYxNzA3OkNwMTI1MjoxNTk0MTE1Mzg5NDYxOnVzZXI6LTE6LTE6MDowOmZhbHNlOk4vQTpERVZfMjAxNzEwLjA6LTE6LTE=
+* @ValidationInfo : Timestamp         : 07 Jul 2020 15:49:49
+* @ValidationInfo : Encoding          : Cp1252
+* @ValidationInfo : User Name         : user
+* @ValidationInfo : Nb tests success  : N/A
+* @ValidationInfo : Nb tests failure  : N/A
+* @ValidationInfo : Rating            : N/A
+* @ValidationInfo : Coverage          : N/A
+* @ValidationInfo : Strict flag       : N/A
+* @ValidationInfo : Bypass GateKeeper : false
+* @ValidationInfo : Compiler Version  : DEV_201710.0
+
+* @AUTHOR : MD SHIBLI MOLLAH
+
+SUBROUTINE GB.MBL.E.UNAUTH.CNT(Y.DATA)
+* PROGRAM GB.MBL.E.UNAUTH.CNT
+  
+    $INSERT I_EQUATE
+    $INSERT I_ENQUIRY.COMMON
+    $USING ST.Customer
+    $USING AC.AccountOpening
+*$INSERT LIMIT
+    $USING LI.Config
+* $INSERT T24.BP I_F.TELLER.TRANSACTION
+    $USING TT.Contract
+    $USING FT.Contract
+    $USING LC.Contract
+* $INSERT T24.BP I_F.CHEQUE.ISSUE
+    $USING ST.ChqIssue
+* $INSERT T24.BP I_F.TELLER.FINANCIAL.SERVICES
+    $USING TT.TellerFinancialService
+    $USING FT.AdhocChargeRequests
+    $USING AZ.Contract
+    $USING CO.Contract
+    $USING AC.AccountClosure
+    $USING ST.ChqSubmit
+    $USING IM.Foundation
+    $USING AC.StandingOrders
+    $USING MD.Contract
+    $USING EB.DataAccess
+    $INSERT I_F.MBL.TXN.PROFILE
+    $USING AA.Framework
+    $USING AA.TermAmount
+    $USING AA.PaymentSchedule
+    $USING ST.CompanyCreation
+    $USING EB.SystemTables
+    $USING EB.Reports
+    
+    GOSUB INIT
+*
+    GOSUB OPENFILES
+*
+    GOSUB PROCESS
+RETURN
+
+INIT:
+*    ST.CompanyCreation.LoadCompany('BNK')
+    Y.COMPANY = EB.SystemTables.getIdCompany()
+*
+    FN.CUS = 'F.CUSTOMER$NAU'
+    F.CUS = ''
+    FN.ACC = 'F.ACCOUNT$NAU'
+    F.ACC = ''
+    FN.LIMIT = 'F.LIMIT$NAU'
+    F.LIMIT = ''
+    FN.FT = 'F.FUNDS.TRANSFER$NAU'
+    F.FT = ''
+*********************************************
+    FN.AA.RET = 'F.AA.ARRANGEMENT.ACTIVITY$NAU'
+    F.AA.RET = ''
+    
+    FN.AA.DEP = 'F.AA.ARRANGEMENT.ACTIVITY$NAU'
+    F.AA.DEP = ''
+    
+    FN.AA.LD = 'F.AA.ARRANGEMENT.ACTIVITY$NAU'
+    F.AA.LD = ''
+********************************************
+    FN.LC = 'F.LETTER.OF.CREDIT$NAU'
+    F.LC = ''
+    FN.CHQ = 'F.CHEQUE.ISSUE$NAU'
+    F.CHQ = ''
+    FN.TFS = 'F.TELLER.FINANCIAL.SERVICES$NAU'
+    F.TFS = ''
+
+    FN.PS = 'F.PAYMENT.STOP$NAU'
+    F.PS = ''
+    FN.DRAW = 'F.DRAWINGS$NAU'
+    F.DRAW = ''
+    FN.ACR = 'F.AC.CHARGE.REQUEST$NAU'
+    F.ACR = ''
+
+    FN.ACLK = 'F.AC.LOCKED.EVENTS$NAU'
+    F.ACLK = ''
+    FN.COLLR = 'F.COLLATERAL.RIGHT$NAU'
+    F.COLLR = ''
+    FN.COLL = 'F.COLLATERAL$NAU'
+    F.COLL = ''
+    FN.AC.CLOSURE = 'F.ACCOUNT.CLOSURE'
+    F.AC.CLOSURE = ''
+    
+    FN.INACTV.RESET = 'F.ACCT.INACTIVE.RESET$NAU'
+    F.INACTV.RESET = ''
+    
+    FN.TID = 'F.TELLER.ID$NAU'
+    F.TID = ''
+    FN.TT = 'F.TELLER$NAU'
+    F.TT = ''
+
+    FN.CHQ.COLL = 'F.CHEQUE.COLLECTION$NAU'
+    F.CHQ.COLL = ''
+    FN.SIGN = 'F.IM.DOCUMENT.UPLOAD$NAU'
+    F.SIGN = ''
+
+    FN.STO = 'F.STANDING.ORDER$NAU'
+    F.STO = ''
+
+    FN.TP = 'F.MBL.TXN.PROFILE$NAU'
+    F.TP = ''
+
+    FN.MD = 'F.MD.DEAL$NAU'
+    F.MD = ''
+    
+RETURN
+
+OPENFILES:
+    EB.DataAccess.Opf(FN.CUS,F.CUS)
+    EB.DataAccess.Opf(FN.ACC,F.ACC)
+    EB.DataAccess.Opf(FN.LIMIT,F.LIMIT)
+    EB.DataAccess.Opf(FN.FT,F.FT)
+    EB.DataAccess.Opf(FN.TT,F.TT)
+    
+    EB.DataAccess.Opf(FN.AA.RET,F.AA.RET)
+    EB.DataAccess.Opf(FN.AA.DEP,F.AA.DEP)
+    EB.DataAccess.Opf(FN.AA.LD,F.AA.LD)
+
+    EB.DataAccess.Opf(FN.LC,F.LC)
+    EB.DataAccess.Opf(FN.TFS,F.TFS)
+    EB.DataAccess.Opf(FN.CHQ.COLL,F.CHQ.COLL)
+    EB.DataAccess.Opf(FN.PS,F.PS)
+    EB.DataAccess.Opf(FN.DRAW,F.DRAW)
+    EB.DataAccess.Opf(FN.ACR,F.ACR)
+
+    EB.DataAccess.Opf(FN.ACLK,F.ACLK)
+    EB.DataAccess.Opf(FN.COLLR,F.COLLR)
+    EB.DataAccess.Opf(FN.COLL,F.COLL)
+    EB.DataAccess.Opf(FN.AC.CLOSURE,F.AC.CLOSURE)
+
+    EB.DataAccess.Opf(FN.TID,F.TID)
+    EB.DataAccess.Opf(FN.CHQ,F.CHQ)
+    EB.DataAccess.Opf(FN.SIGN,F.SIGN)
+    EB.DataAccess.Opf(FN.INACTV.RESET,F.INACTV.RESET)
+    EB.DataAccess.Opf(FN.STO,F.STO)
+    EB.DataAccess.Opf(FN.TP,F.TP)
+    EB.DataAccess.Opf(FN.MD,F.MD)
+RETURN
+  
+PROCESS:
+
+    SEL.CMD.CUS = "SELECT ":FN.CUS:" WITH RECORD.STATUS EQ INAU AND COMPANY.BOOK EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.CUS,SEL.CMD.LIST.CUS,'',NO.OF.REC.CUS,RET.CODE.CUS)
+
+    SEL.CMD.ACC = "SELECT ":FN.ACC:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.ACC,SEL.CMD.LIST.ACC,'',NO.OF.REC.ACC,RET.CODE.ACC)
+
+    SEL.CMD.LIMIT = "SELECT ":FN.LIMIT:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.LIMIT,SEL.CMD.LIST.LIMIT,'',NO.OF.REC.LIMIT,RET.CODE.LIMIT)
+
+    SEL.CMD.FT = "SELECT ":FN.FT:" WITH RECORD.STATUS EQ INAU AND (TRANSACTION.TYPE NE 'ACIW' AND TRANSACTION.TYPE NE 'ACOW') AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.FT,SEL.CMD.LIST.FT,'',NO.OF.REC.FT,RET.CODE.FT)
+
+    SEL.CMD.FT.1 = "SELECT ":FN.FT:" WITH RECORD.STATUS EQ INAU AND TRANSACTION.TYPE EQ 'ACIW' 'ACOW' AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.FT.1,SEL.CMD.LIST.FT.1,'',NO.OF.REC.FT.1,RET.CODE.FT.1)
+
+    SEL.CMD.TT = "SELECT ":FN.TT:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.TT,SEL.CMD.LIST.TT,'',NO.OF.REC.TT,RET.CODE.TT)
+
+****************************AA**********************************
+    SEL.CMD.RETAIL = "SELECT ":FN.AA.RET:" WITH RECORD.STATUS EQ INAU AND TXN.SYSTEM.ID NE 'FT' AND TXN.SYSTEM.ID NE 'TT' AND TXN.SYSTEM.ID NE 'AC' AND ACTIVITY LIKE 'ACCOUNTS...' AND ACTIVITY UNLIKE '...VIEW-ARRANGEMENT' AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.RETAIL,SEL.CMD.LIST.RETAIL,'',NO.OF.REC.RETAIL,RET.CODE.RETAIL)
+
+    SEL.CMD.DEP = "SELECT ":FN.AA.DEP:" WITH RECORD.STATUS EQ INAU AND TXN.SYSTEM.ID NE 'FT' AND TXN.SYSTEM.ID NE 'TT' AND TXN.SYSTEM.ID NE 'AC' AND ACTIVITY LIKE 'DEPOSIT...' AND ACTIVITY UNLIKE '...VIEW-ARRANGEMENT' AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.DEP,SEL.CMD.LIST.DEP,'',NO.OF.REC.DEP,RET.CODE.DEP)
+*
+    SEL.CMD.LD = "SELECT ":FN.AA.LD:" WITH RECORD.STATUS EQ INAU AND TXN.SYSTEM.ID NE 'FT' AND TXN.SYSTEM.ID NE 'TT' AND TXN.SYSTEM.ID NE 'AC' AND ACTIVITY LIKE 'LENDING...' AND ACTIVITY UNLIKE '...VIEW-ARRANGEMENT' AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.LD,SEL.CMD.LIST.LD,'',NO.OF.REC.LD,RET.CODE.LD)
+*
+********************************************************************************************
+    
+    SEL.CMD.LC = "SELECT ":FN.LC:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.LC,SEL.CMD.LIST.LC,'',NO.OF.REC.LC,RET.CODE.LC)
+*
+    SEL.CMD.CHQ = "SELECT ":FN.CHQ:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.CHQ,SEL.CMD.LIST.CHQ,'',NO.OF.REC.CHQ,RET.CODE.CHQ)
+
+    SEL.CMD.TFS = "SELECT ":FN.TFS:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.TFS,SEL.CMD.LIST.TFS,'',NO.OF.REC.TFS,RET.CODE.TFS)
+
+    SEL.CMD.PS = "SELECT ":FN.PS:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.PS,SEL.CMD.LIST.PS,'',NO.OF.REC.PS,RET.CODE.PS)
+
+    SEL.CMD.DRAW = "SELECT ":FN.DRAW:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.DRAW,SEL.CMD.LIST.DRAW,'',NO.OF.REC.DRAW,RET.CODE.DRAW)
+
+    SEL.CMD.ACR = "SELECT ":FN.ACR:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.ACR,SEL.CMD.LIST.ACR,'',NO.OF.REC.ACR,RET.CODE.ACR)
+
+    SEL.CMD.ACLK = "SELECT ":FN.ACLK:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.ACLK,SEL.CMD.LIST.ACLK,'',NO.OF.REC.ACLK,RET.CODE.ACLK)
+
+    SEL.CMD.COLLR = "SELECT ":FN.COLLR:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.COLLR,SEL.CMD.LIST.COLLR,'',NO.OF.REC.COLLR,RET.CODE.COLLR)
+
+    SEL.CMD.COLL = "SELECT ":FN.COLL:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.COLL,SEL.CMD.LIST.COLL,'',NO.OF.REC.COLL,RET.CODE.COLL)
+
+    SEL.CMD.AC.CLOSURE = "SELECT ":FN.AC.CLOSURE:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.AC.CLOSURE,SEL.CMD.LIST.AC.CLOSURE,'',NO.OF.REC.AC.CLOSURE,RET.CODE.AC.CLOSURE)
+    
+    SEL.CMD.INACTV = "SELECT ":FN.INACTV.RESET:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.INACTV,SEL.CMD.LIST.INACTV,'',NO.OF.REC.INACTV,RET.CODE.INACTV)
+    
+    SEL.CMD.MD = "SELECT ":FN.MD:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.MD,SEL.CMD.LIST.MD,'',NO.OF.REC.MD,RET.CODE.MD)
+    
+    SEL.CMD.CHQ.COLL = "SELECT ":FN.CHQ.COLL:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.CHQ.COLL,SEL.CMD.LIST.CHQ.COLL,'',NO.OF.REC.CHQ.COLL,RET.CODE.CHQ.COLL)
+    
+    SEL.CMD.STO = "SELECT ":FN.STO:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.STO,SEL.CMD.LIST.STO,'',NO.OF.REC.STO,RET.CODE.STO)
+    
+    SEL.CMD.TID = "SELECT ":FN.TID:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.TID,SEL.CMD.LIST.TID,'',NO.OF.REC.TID,RET.CODE.TID)
+    
+    SEL.CMD.SIGN = "SELECT ":FN.SIGN:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.SIGN,SEL.CMD.LIST.SIGN,'',NO.OF.REC.SIGN,RET.CODE.SIGN)
+    
+    SEL.CMD.TP = "SELECT ":FN.TP:" WITH RECORD.STATUS EQ INAU AND CO.CODE EQ ":Y.COMPANY
+    EB.DataAccess.Readlist(SEL.CMD.TP,SEL.CMD.LIST.TP,'',NO.OF.REC.TP,RET.CODE.TP)
+       
+    NO.OF.REC.ADI = 0
+    NO.OF.REC.ACI = 0
+    NO.OF.REC.CARD = 0
+    NO.OF.REC.AC.CLOSURE = 0
+    NO.OF.REC.CHQ.COLL = NO.OF.REC.CHQ.COLL + NO.OF.REC.FT.1
+*
+    Y.DATA = NO.OF.REC.CUS:'*':NO.OF.REC.ACC:'*':NO.OF.REC.TP:'*':NO.OF.REC.SIGN:'*':NO.OF.REC.AC.CLOSURE:'*':NO.OF.REC.ACI:'*':NO.OF.REC.ADI:'*':NO.OF.REC.INACTV:'*':NO.OF.REC.ACLK:'*':NO.OF.REC.STO:'*':NO.OF.REC.DEP:'*':NO.OF.REC.CHQ:'*': NO.OF.REC.PS:'*':NO.OF.REC.TID:'*':NO.OF.REC.TT:'*':NO.OF.REC.FT:'*':NO.OF.REC.CHQ.COLL:'*':NO.OF.REC.CARD:'*':NO.OF.REC.ACR:'*':NO.OF.REC.TFS:'*':NO.OF.REC.LIMIT:'*':NO.OF.REC.COLLR:'*':NO.OF.REC.COLL:'*':NO.OF.REC.LD:'*':NO.OF.REC.RETAIL:'*':NO.OF.REC.MD:'*':NO.OF.REC.LC:'*':NO.OF.REC.DRAW
+*                   1               2                   3                  4                5                     6                  7                   8                    9                 10               11                 12               13              14                  15               16                17                  18                 19                    20                21                 22                23                 24               25              26                  27              28
+*   PRINT Y.DATA
+RETURN

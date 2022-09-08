@@ -1,0 +1,21 @@
+* I_F.BD.SME.CODE Created 10 OCT 19 at 11:29AM by MORTOZA/MORTOZA01
+*      PREFIX[BD.SME]
+                   EQU BD.SME.ENTERPRISE TO 1,   BdSmeCode_Enterprise TO 1,
+                      BD.SME.FIXED.ASSET TO 2,   BdSmeCode_FixedAsset TO 2,
+                   BD.SME.NO.OF.EMPLOYEE TO 3,   BdSmeCode_NoOfEmployee TO 3,
+                      BD.SME.RESERVED.05 TO 4,   BdSmeCode_Reserved05 TO 4,
+                      BD.SME.RESERVED.04 TO 5,   BdSmeCode_Reserved04 TO 5,
+                      BD.SME.RESERVED.03 TO 6,   BdSmeCode_Reserved03 TO 6,
+                      BD.SME.RESERVED.02 TO 7,   BdSmeCode_Reserved02 TO 7,
+                      BD.SME.RESERVED.01 TO 8,   BdSmeCode_Reserved01 TO 8,
+                        BD.SME.LOCAL.REF TO 9,   BdSmeCode_LocalRef TO 9,
+                         BD.SME.OVERRIDE TO 10,  BdSmeCode_Override TO 10,
+                    BD.SME.RECORD.STATUS TO 11,  BdSmeCode_RecordStatus TO 11,
+                          BD.SME.CURR.NO TO 12,  BdSmeCode_CurrNo TO 12,
+                         BD.SME.INPUTTER TO 13,  BdSmeCode_Inputter TO 13,
+                        BD.SME.DATE.TIME TO 14,  BdSmeCode_DateTime TO 14,
+                       BD.SME.AUTHORISER TO 15,  BdSmeCode_Authoriser TO 15,
+                          BD.SME.CO.CODE TO 16,  BdSmeCode_CoCode TO 16,
+                        BD.SME.DEPT.CODE TO 17,  BdSmeCode_DeptCode TO 17,
+                     BD.SME.AUDITOR.CODE TO 18,  BdSmeCode_AuditorCode TO 18,
+                  BD.SME.AUDIT.DATE.TIME TO 19,  BdSmeCode_AuditDateTime TO 19

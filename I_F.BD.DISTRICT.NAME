@@ -1,0 +1,19 @@
+* I_F.BD.DISTRICT.NAME Created 09 OCT 19 at 03:30PM by MORTOZA/MORTOZA01
+*      PREFIX[BD.DISTRICT]
+                EQU BD.DISTRICT.DISTRICT.NAME TO 1,   BdDistrictName_DistrictName TO 1,
+                      BD.DISTRICT.RESERVED.05 TO 2,   BdDistrictName_Reserved05 TO 2,
+                      BD.DISTRICT.RESERVED.04 TO 3,   BdDistrictName_Reserved04 TO 3,
+                      BD.DISTRICT.RESERVED.03 TO 4,   BdDistrictName_Reserved03 TO 4,
+                      BD.DISTRICT.RESERVED.02 TO 5,   BdDistrictName_Reserved02 TO 5,
+                      BD.DISTRICT.RESERVED.01 TO 6,   BdDistrictName_Reserved01 TO 6,
+                        BD.DISTRICT.LOCAL.REF TO 7,   BdDistrictName_LocalRef TO 7,
+                         BD.DISTRICT.OVERRIDE TO 8,   BdDistrictName_Override TO 8,
+                    BD.DISTRICT.RECORD.STATUS TO 9,   BdDistrictName_RecordStatus TO 9,
+                          BD.DISTRICT.CURR.NO TO 10,  BdDistrictName_CurrNo TO 10,
+                         BD.DISTRICT.INPUTTER TO 11,  BdDistrictName_Inputter TO 11,
+                        BD.DISTRICT.DATE.TIME TO 12,  BdDistrictName_DateTime TO 12,
+                       BD.DISTRICT.AUTHORISER TO 13,  BdDistrictName_Authoriser TO 13,
+                          BD.DISTRICT.CO.CODE TO 14,  BdDistrictName_CoCode TO 14,
+                        BD.DISTRICT.DEPT.CODE TO 15,  BdDistrictName_DeptCode TO 15,
+                     BD.DISTRICT.AUDITOR.CODE TO 16,  BdDistrictName_AuditorCode TO 16,
+                  BD.DISTRICT.AUDIT.DATE.TIME TO 17,  BdDistrictName_AuditDateTime TO 17

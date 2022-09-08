@@ -1,0 +1,13 @@
+* I_F.BD.MBL.LPC.CHARGE.REC Created 10 APR 20 at 10:54PM by mbll3dev/EBRAHIM.FDS01
+*      PREFIX[LPC]
+                     EQU LPC.DUE.DATE TO 1,   BdMblLpcChargeRec_DueDate TO 1,
+                    LPC.AMT.THIS.DATE TO 2,   BdMblLpcChargeRec_AmtThisDate TO 2,
+                     LPC.TOT.CHRG.AMT TO 3,   BdMblLpcChargeRec_TotChrgAmt TO 3,
+                  LPC.TOT.REALIZE.AMT TO 4,   BdMblLpcChargeRec_TotRealizeAmt TO 4,
+                      LPC.TOT.DUE.AMT TO 5,   BdMblLpcChargeRec_TotDueAmt TO 5,
+                         LPC.COM.CODE TO 6,   BdMblLpcChargeRec_ComCode TO 6,
+                       LPC.RESERVED.5 TO 7,   BdMblLpcChargeRec_Reserved5 TO 7,
+                       LPC.RESERVED.4 TO 8,   BdMblLpcChargeRec_Reserved4 TO 8,
+                       LPC.RESERVED.3 TO 9,   BdMblLpcChargeRec_Reserved3 TO 9,
+                       LPC.RESERVED.2 TO 10,  BdMblLpcChargeRec_Reserved2 TO 10,
+                       LPC.RESERVED.1 TO 11,  BdMblLpcChargeRec_Reserved1 TO 11

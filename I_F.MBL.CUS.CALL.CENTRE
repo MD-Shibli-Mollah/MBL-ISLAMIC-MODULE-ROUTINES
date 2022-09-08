@@ -1,0 +1,19 @@
+* I_F.MBL.CUS.CALL.CENTRE Created 02 DEC 19 at 01:51PM by MORTOZA/MORTOZA01
+*      PREFIX[CALL.CENTRE]
+                       EQU CALL.CENTRE.CUS.ID TO 1,   MblCusCallCentre_CusId TO 1,
+                      CALL.CENTRE.RESERVED.05 TO 2,   MblCusCallCentre_Reserved05 TO 2,
+                      CALL.CENTRE.RESERVED.04 TO 3,   MblCusCallCentre_Reserved04 TO 3,
+                      CALL.CENTRE.RESERVED.03 TO 4,   MblCusCallCentre_Reserved03 TO 4,
+                      CALL.CENTRE.RESERVED.02 TO 5,   MblCusCallCentre_Reserved02 TO 5,
+                      CALL.CENTRE.RESERVED.01 TO 6,   MblCusCallCentre_Reserved01 TO 6,
+                        CALL.CENTRE.LOCAL.REF TO 7,   MblCusCallCentre_LocalRef TO 7,
+                         CALL.CENTRE.OVERRIDE TO 8,   MblCusCallCentre_Override TO 8,
+                    CALL.CENTRE.RECORD.STATUS TO 9,   MblCusCallCentre_RecordStatus TO 9,
+                          CALL.CENTRE.CURR.NO TO 10,  MblCusCallCentre_CurrNo TO 10,
+                         CALL.CENTRE.INPUTTER TO 11,  MblCusCallCentre_Inputter TO 11,
+                        CALL.CENTRE.DATE.TIME TO 12,  MblCusCallCentre_DateTime TO 12,
+                       CALL.CENTRE.AUTHORISER TO 13,  MblCusCallCentre_Authoriser TO 13,
+                          CALL.CENTRE.CO.CODE TO 14,  MblCusCallCentre_CoCode TO 14,
+                        CALL.CENTRE.DEPT.CODE TO 15,  MblCusCallCentre_DeptCode TO 15,
+                     CALL.CENTRE.AUDITOR.CODE TO 16,  MblCusCallCentre_AuditorCode TO 16,
+                  CALL.CENTRE.AUDIT.DATE.TIME TO 17,  MblCusCallCentre_AuditDateTime TO 17

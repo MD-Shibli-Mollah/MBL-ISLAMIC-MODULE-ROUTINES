@@ -1,0 +1,23 @@
+* I_F.MBL.SMS.TXN.INFO Created 11 APR 20 at 05:01PM by r19dev/MORTOZA01
+*      PREFIX[SMS.TXN]
+                  EQU SMS.TXN.CUSTOMER.NO TO 1,   MblSmsTxnInfo_CustomerNo TO 1,
+                       SMS.TXN.ACCOUNT.NO TO 2,   MblSmsTxnInfo_AccountNo TO 2,
+                          SMS.TXN.SMS.QTY TO 3,   MblSmsTxnInfo_SmsQty TO 3,
+                             SMS.TXN.DATE TO 4,   MblSmsTxnInfo_Date TO 4,
+                       SMS.TXN.AC.CO.CODE TO 5,   MblSmsTxnInfo_AcCoCode TO 5,
+                      SMS.TXN.RESERVED.05 TO 6,   MblSmsTxnInfo_Reserved05 TO 6,
+                      SMS.TXN.RESERVED.04 TO 7,   MblSmsTxnInfo_Reserved04 TO 7,
+                      SMS.TXN.RESERVED.03 TO 8,   MblSmsTxnInfo_Reserved03 TO 8,
+                      SMS.TXN.RESERVED.02 TO 9,   MblSmsTxnInfo_Reserved02 TO 9,
+                      SMS.TXN.RESERVED.01 TO 10,  MblSmsTxnInfo_Reserved01 TO 10,
+                        SMS.TXN.LOCAL.REF TO 11,  MblSmsTxnInfo_LocalRef TO 11,
+                         SMS.TXN.OVERRIDE TO 12,  MblSmsTxnInfo_Override TO 12,
+                    SMS.TXN.RECORD.STATUS TO 13,  MblSmsTxnInfo_RecordStatus TO 13,
+                          SMS.TXN.CURR.NO TO 14,  MblSmsTxnInfo_CurrNo TO 14,
+                         SMS.TXN.INPUTTER TO 15,  MblSmsTxnInfo_Inputter TO 15,
+                        SMS.TXN.DATE.TIME TO 16,  MblSmsTxnInfo_DateTime TO 16,
+                       SMS.TXN.AUTHORISER TO 17,  MblSmsTxnInfo_Authoriser TO 17,
+                          SMS.TXN.CO.CODE TO 18,  MblSmsTxnInfo_CoCode TO 18,
+                        SMS.TXN.DEPT.CODE TO 19,  MblSmsTxnInfo_DeptCode TO 19,
+                     SMS.TXN.AUDITOR.CODE TO 20,  MblSmsTxnInfo_AuditorCode TO 20,
+                  SMS.TXN.AUDIT.DATE.TIME TO 21,  MblSmsTxnInfo_AuditDateTime TO 21
